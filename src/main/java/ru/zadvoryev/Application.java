@@ -15,9 +15,9 @@ public class Application {
     public static void main(String[] args) {
 
         Downloader downloader = new Downloader();
-        String address = "https://selenium-release.storage.googleapis.com/";
-        String rootDownloadPath = "C:\\Users\\alexm\\Desktop\\IE\\";
-        List<String> downloadLinks = createDownloadLinks(address, parse(address));
+        String link = Property.get("site");
+        String rootDownloadPath = Property.get("root.download.path");
+        List<String> downloadLinks = createDownloadLinks(link, parse(link));
         downloader.downloadAndSave(rootDownloadPath, downloadLinks);
     }
 
