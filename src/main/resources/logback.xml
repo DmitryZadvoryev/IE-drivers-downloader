@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<configuration scan="true" scanPeriod="2 seconds" debug="false">
+
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <append>true</append>
+        <encoder>
+            <Pattern>%highlight(%d{yyyy-MM-dd HH:mm:ss:SSS} [%thread] %-5level at %logger.%M\(%file:%line\) -
+                %msg%n%throwable)
+            </Pattern>
+        </encoder>
+    </appender>
+
+    <appender name="TXT" class="ch.qos.logback.core.FileAppender">
+        <file>build/logs/download-log.log</file>
+        <append>true</append>
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <charset>UTF-8</charset>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss:SSS} [%thread] %-5level at %logger.%M\(%file:%line\) - %msg%n%throwable
+            </pattern>
+        </encoder>
+    </appender>
+
+    <logger name="net.lightbody.bmp" level="WARN"/>
+    <logger name="io.netty.util.internal" level="WARN"/>
+
+    <!--
+        <contextListener class="ch.qos.logback.classic.jul.LevelChangePropagator">
+            <resetJUL>true</resetJUL>
+        </contextListener>
+    -->
+
+    <root level="trace">
+        <appender-ref ref="CONSOLE"/>
+        <appender-ref ref="TXT"/>
+    </root>
+
+
+</configuration>
