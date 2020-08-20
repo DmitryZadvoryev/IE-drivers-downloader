@@ -4,6 +4,7 @@ import java.io.*;
 import java.util.Properties;
 
 public class Property {
+
     static Properties properties;
     private static Property ourInstance = new Property();
 

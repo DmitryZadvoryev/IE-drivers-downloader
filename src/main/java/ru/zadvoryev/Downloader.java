@@ -19,10 +19,10 @@ import java.util.List;
 
 public class Downloader {
 
-    private static Logger log = LoggerFactory.getLogger(SAXParse.class);
+    private static Logger log = LoggerFactory.getLogger(Downloader.class);
 
-    static int count = 0;
-    static double size = 0;
+    private int count = 0;
+    private double size = 0;
 
     public Downloader() {
     }
